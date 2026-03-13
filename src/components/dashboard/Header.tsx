@@ -17,8 +17,8 @@ export function Header() {
     <header className="flex items-center justify-between px-4 md:px-6 h-14 border-b border-primary/30 bg-card">
       <div className="flex items-center gap-2 text-primary font-semibold text-lg">
         <span>💼</span>
-        <span className="hidden sm:inline">Semiconductor Eye — Job Hunter</span>
-        <span className="sm:hidden">SemiEye</span>
+        <span className="hidden sm:inline">Semiconductor Job Hunter — H1B Automated</span>
+        <span className="sm:hidden">SemiJob H1B</span>
       </div>
 
       <span className="text-muted-foreground text-xs hidden md:block">
