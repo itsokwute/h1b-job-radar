@@ -5,12 +5,15 @@ import { Button } from "@/components/ui/button";
 export function Header() {
   const [runState, setRunState] = useState<"idle" | "running" | "done">("idle");
 
-  const handleRunNow = () => {
+  const handleRunNow = async () => {
     setRunState("running");
-    setTimeout(() => {
-      setRunState("done");
-      setTimeout(() => setRunState("idle"), 2000);
-    }, 3000);
+    try {
+      await fetch("https://aiaa1.datasciencemasterminds.com/webhook/job-hunter-trigger");
+    } catch (e) {
+      console.error("Webhook trigger failed:", e);
+    }
+    setRunState("done");
+    setTimeout(() => setRunState("idle"), 3000);
   };
 
   return (
